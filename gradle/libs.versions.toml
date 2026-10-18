@@ -1,0 +1,11 @@
+[versions]
+agp = "9.4.1"
+cxx = "30.0.16248370"
+hiddenapibypass = "6.2"
+
+[libraries]
+cxx = { group = "org.lsposed.libcxx", name = "libcxx", version.ref = "cxx" }
+hiddenapibypass = { group = "org.lsposed.hiddenapibypass", name = "hiddenapibypass", version.ref = "hiddenapibypass" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }

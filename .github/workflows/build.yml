@@ -1,0 +1,36 @@
+name: Build
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-26
+    steps:
+      - name: Check out
+        uses: actions/checkout@v7
+
+      - name: Set up JDK
+        uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Build
+        run: |
+          chmod +x gradlew
+          ./gradlew assembleRelease
+
+      - name: Collect files
+        run: |
+          mkdir -p artifact/zygisk
+          cp module/classes.dex artifact/classes.dex
+          cp module/zygisk/*.so artifact/zygisk/
+          ls -lR artifact
+
+      - name: Upload
+        uses: actions/upload-artifact@v7
+        with:
+          name: jerry-pif-inject
+          path: artifact/
+          compression-level: 9
