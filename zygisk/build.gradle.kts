@@ -89,9 +89,6 @@ dependencies {
 
 afterEvaluate {
     tasks.named("assembleRelease") {
-        finalizedBy(
-            rootProject.tasks["copyZygiskFiles"],
-            rootProject.tasks["zip"]
-        )
+        finalizedBy(rootProject.tasks["copyZygiskFiles"])
     }
 }

@@ -24,8 +24,8 @@ jobs:
       - name: Collect files
         run: |
           mkdir -p artifact/zygisk
-          cp module/classes.dex artifact/classes.dex
-          cp module/zygisk/*.so artifact/zygisk/
+          cp out/classes.dex artifact/classes.dex
+          cp out/zygisk/*.so artifact/zygisk/
           ls -lR artifact
 
       - name: Upload

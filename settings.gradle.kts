@@ -22,5 +22,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "PlayIntegrityFix"
+rootProject.name = "JerryPIF"
 include(":zygisk")

@@ -5,7 +5,7 @@ plugins {
 
 tasks.register("copyZygiskFiles") {
     description = "Copy Zygisk Files"
-    val moduleFolder = project.rootDir.resolve("module")
+    val moduleFolder = project.rootDir.resolve("out")
     val zygiskBuildDir = project.rootDir.resolve("zygisk/build")
     val classesJar = zygiskBuildDir.resolve("intermediates/dex/release/minifyReleaseWithR8/classes.dex")
     val zygiskSoDir = zygiskBuildDir.resolve("intermediates/stripped_native_libs/release/stripReleaseDebugSymbols/out/lib")
@@ -16,7 +16,6 @@ tasks.register("copyZygiskFiles") {
 
     doLast {
         classesJar.copyTo(moduleFolder.resolve("classes.dex"), overwrite = true)
-        moduleFolder.resolve("inject").deleteRecursively()
         zygiskSoDir.walk()
             .filter { it.isFile && it.name == "libzygisk.so" }
             .forEach { soFile ->
@@ -25,14 +24,4 @@ tasks.register("copyZygiskFiles") {
                 soFile.copyTo(destination, overwrite = true)
             }
     }
-}
-
-tasks.register<Zip>("zip") {
-    description = "Zip Module"
-    dependsOn("copyZygiskFiles")
-
-    archiveFileName.set("PlayIntegrityFix.zip")
-    destinationDirectory.set(project.rootDir.resolve("out"))
-
-    from(project.rootDir.resolve("module"))
 }
