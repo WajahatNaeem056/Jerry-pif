@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "es.chiteroman.playintegrityfix"
+    namespace = "com.jerry.pif"
     compileSdk = 37
     compileSdkMinor = 2
     ndkVersion = "30.0.16248370"

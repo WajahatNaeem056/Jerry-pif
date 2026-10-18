@@ -1,4 +1,4 @@
-package es.chiteroman.playintegrityfix;
+package com.jerry.pif;
 
 import java.security.Provider;
 

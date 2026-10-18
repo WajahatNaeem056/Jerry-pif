@@ -1,4 +1,4 @@
-package es.chiteroman.playintegrityfix;
+package com.jerry.pif;
 
 import android.content.pm.PackageInfo;
 import android.content.pm.Signature;

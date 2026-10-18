@@ -258,7 +258,7 @@ void injectDex() {
 
     jmethodID loadClass = gEnv->GetMethodID(
             classLoaderClass, "loadClass", "(Ljava/lang/String;)Ljava/lang/Class;");
-    jstring entryClassName = gEnv->NewStringUTF("es.chiteroman.playintegrityfix.EntryPoint");
+    jstring entryClassName = gEnv->NewStringUTF("com.jerry.pif.EntryPoint");
     jobject entryClassObject = gEnv->CallObjectMethod(dexClassLoader, loadClass, entryClassName);
     if (gEnv->ExceptionCheck()) {
         gEnv->ExceptionDescribe();
@@ -360,7 +360,7 @@ void companion(int fd) {
 
 using namespace zygisk;
 
-class PlayIntegrityFix : public ModuleBase {
+class JerryPIF : public ModuleBase {
 public:
     void onLoad(Api *api_, JNIEnv *env_) override {
         api = api_;
@@ -466,5 +466,5 @@ private:
     bool isVending = false;
 };
 
-REGISTER_ZYGISK_MODULE(PlayIntegrityFix)
+REGISTER_ZYGISK_MODULE(JerryPIF)
 REGISTER_ZYGISK_COMPANION(companion)
