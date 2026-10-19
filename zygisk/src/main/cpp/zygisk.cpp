@@ -18,7 +18,7 @@
 #define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG, "PIF", __VA_ARGS__)
 #define LOGE(...) __android_log_print(ANDROID_LOG_ERROR, "PIF", __VA_ARGS__)
 
-#define DEX_PATH "/data/adb/modules/JerryManager/classes.dex"
+#define DEX_PATH "/data/adb/modules/JerryManager/dex/classes.dex"
 #define DEFAULT_PIF "/data/adb/modules/JerryManager/pif.prop"
 #define CUSTOM_PIF "/data/adb/pif.prop"
 
