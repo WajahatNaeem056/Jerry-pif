@@ -1,11 +1,8 @@
 # Jerry-pif
 
-[
+[Build](https://github.com/WajahatNaeem056/Jerry-pif/actions/workflows/build.yml/badge.svg)
 
-![Build](https://github.com/WajahatNaeem056/Jerry-pif/actions/workflows/build.yml/badge.svg)
-
-](https://github.com/WajahatNaeem056/Jerry-pif/actions)
-[
+(https://github.com/WajahatNaeem056/Jerry-pif/actions)
 
 ![License: GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-blue.svg)
 
