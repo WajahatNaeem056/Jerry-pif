@@ -1,24 +1,32 @@
-Jerry-PIF
+# Jerry-pif
 
-Jerry-PIF is the built-in Play Integrity Fix (Zygisk module) used by "JerryManager" (https://github.com/WajahatNaeem056/JerryManager).
+[
 
-It handles PIF directly through JerryManager, so there's no need to install a separate PIF module.
+![Build](https://github.com/WajahatNaeem056/Jerry-pif/actions/workflows/build.yml/badge.svg)
 
-Credit
+](https://github.com/WajahatNaeem056/Jerry-pif/actions)
+[
 
-Based on "KOWX712/PlayIntegrityFix" (https://github.com/KOWX712/PlayIntegrityFix), using the "inject_s" branch, which is itself based on "chiteroman/PlayIntegrityFix" (https://github.com/chiteroman/PlayIntegrityFix).
+![License: GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-blue.svg)
 
-Licensed under GPL-3.0. See "LICENSE" (LICENSE) for details.
+](LICENSE)
 
-Build
+Built-in **Play Integrity Fix** (Zygisk module) powering [JerryManager](https://github.com/WajahatNaeem056/JerryManager) — no separate standalone PIF module needed.
 
-GitHub Actions builds "classes.dex" and the Zygisk libraries on push. Download the workflow artifact and copy the files to the following locations:
+Injects into Zygote and spoofs device build properties, key attestation, and vending/GMS signals so apps see a clean, unrooted device.
 
-- "classes.dex" → "JerryManager/dex/classes.dex"
-- "zygisk/*.so" → "JerryManager/zygisk/*.so"
+## What it spoofs
 
-Notes
+| Flag | Effect |
+|---|---|
+| `spoofBuild` | Device build fingerprint / model |
+| `spoofProps` | System properties read by integrity checks |
+| `spoofVendingBuild` / `spoofVendingSdk` | Play Store / vending-specific build & SDK level |
+| `spoofProvider` | Content provider identity |
+| `spoofSignature` | App signature reporting |
 
-Jerry-PIF is built specifically for JerryManager and isn't meant to run as a standalone module.
+Config is read from `/data/adb/modules/JerryManager/pif.prop`, or `/data/adb/pif.prop` as a user override.
 
-It reads its configuration from "/data/adb/modules/JerryManager/pif.prop". The file "/data/adb/pif.prop" can be used as an override.
+## Build
+
+Pushing to `main` triggers [GitHub Actions](.github/workflows/build.yml), which builds the Zygisk module and uploads an artifact containing:
