@@ -27,8 +27,8 @@ Pushing to `main` triggers [GitHub Actions](.github/workflows/build.yml), which 
 
 Jerry-pif is implemented from the `inject` branch of Play Integrity Fix. Sincere thanks to:
 
-- **Play Integrity Fix** (by chiteroman) — the original module this project is derived from.
-- **[KOWX712](https://github.com/KOWX712/PlayIntegrityFix)** — Play Integrity Fix `inject`
+- **chiteroman**: author of the original **Play Integrity Fix**.
+- **[KOWX712](https://github.com/KOWX712/PlayIntegrityFix)**: **Play Integrity Fix** `inject` branch, which Jerry-pif is implemented from
 
 ## Maintainer
 
