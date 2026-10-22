@@ -1,12 +1,7 @@
 # Jerry-pif
 
-[Build](https://github.com/WajahatNaeem056/Jerry-pif/actions/workflows/build.yml/badge.svg)
-
-(https://github.com/WajahatNaeem056/Jerry-pif/actions)
-
-![License: GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-blue.svg)
-
-](LICENSE)
+[![Build](https://github.com/WajahatNaeem056/Jerry-pif/actions/workflows/build.yml/badge.svg)](https://github.com/WajahatNaeem056/Jerry-pif/actions)
+[![License: GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-blue.svg)](LICENSE)
 
 Built-in **Play Integrity Fix** (Zygisk module) powering [JerryManager](https://github.com/WajahatNaeem056/JerryManager) — no separate standalone PIF module needed.
 
@@ -27,3 +22,9 @@ Config is read from `/data/adb/modules/JerryManager/pif.prop`, or `/data/adb/pif
 ## Build
 
 Pushing to `main` triggers [GitHub Actions](.github/workflows/build.yml), which builds the Zygisk module and uploads an artifact containing:
+
+- <!-- TODO: yahan artifact ki files likho (e.g. module zip) -->
+
+## License
+
+Released under the [GPL-3.0 license](LICENSE).
