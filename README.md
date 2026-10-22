@@ -21,9 +21,18 @@ Config is read from `/data/adb/modules/JerryManager/pif.prop`, or `/data/adb/pif
 
 ## Build
 
-Pushing to `main` triggers [GitHub Actions](.github/workflows/build.yml), which builds the Zygisk module and uploads an artifact containing:
+Pushing to `main` triggers [GitHub Actions](.github/workflows/build.yml), which builds the Zygisk module and uploads the module as a downloadable artifact.
 
-- <!-- TODO: yahan artifact ki files likho (e.g. module zip) -->
+## Credits
+
+Jerry-pif is implemented from the `inject` branch of Play Integrity Fix. Sincere thanks to:
+
+- **Play Integrity Fix** (by chiteroman) — the original module this project is derived from.
+- **[KOWX712](https://github.com/KOWX712/PlayIntegrityFix)** — Play Integrity Fix `inject`
+
+## Maintainer
+
+Maintained by [WajahatNaeem056](https://github.com/WajahatNaeem056) as Developer of [JerryManager](https://github.com/WajahatNaeem056/JerryManager), 
 
 ## License
 
